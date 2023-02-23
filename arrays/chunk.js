@@ -8,10 +8,13 @@
  *
  * @return {Array} An array of chunks
  */
+
 function chunk(arr, size = 1) {
   if (size < 1) return [];
+
   let newArr = [];
   let tempArr = [];
+
   for (let i = 1; i <= arr.length; i += 1) {
     tempArr = [...tempArr, arr[i - 1]];
     if (i % size === 0 || i === arr.length) {
@@ -19,7 +22,6 @@ function chunk(arr, size = 1) {
       tempArr = [];
     }
   }
-  console.log(newArr);
   return newArr;
 }
 
