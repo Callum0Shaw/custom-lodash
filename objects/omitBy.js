@@ -1,6 +1,10 @@
-function omitBy(params) {
-  // TODO:
-  console.log('omitBy');
+function omitBy(obj, predicate) {
+  const newObj = {};
+  const keys = Object.keys(obj);
+  for (let i = 0; i < keys.length; i += 1) {
+    if (!predicate(obj[keys[i]])) newObj[keys[i]] = obj[keys[i]];
+  }
+  return newObj;
 }
 
-export default omitBy
+module.exports = omitBy;
