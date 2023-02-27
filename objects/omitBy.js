@@ -1,7 +1,8 @@
 function omitBy(obj, predicate) {
   const newObj = {};
-  for (const key in obj) {
-    if (!predicate(obj[key])) newObj[key] = obj[key];
+  const keys = Object.keys(obj);
+  for (let i = 0; i < keys.length; i += 1) {
+    if (!predicate(obj[keys[i]])) newObj[keys[i]] = obj[keys[i]];
   }
   return newObj;
 }
